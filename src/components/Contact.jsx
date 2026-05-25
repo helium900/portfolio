@@ -10,7 +10,7 @@ function Contact({ theme }) {
     email: '',
     message: ''
   });
-  const [status, setStatus] = useState('idle'); // 'idle' | 'submitting' | 'success' | 'error'
+  const [status, setStatus] = useState('idle'); 
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -42,7 +42,7 @@ function Contact({ theme }) {
         setStatus('success');
         setFormData({ name: '', email: '', message: '' });
 
-        // Reset success status after 5 seconds
+      
         setTimeout(() => {
           setStatus('idle');
         }, 5000);
@@ -63,7 +63,7 @@ function Contact({ theme }) {
     <section id="contact" className="py-24 px-6 md:px-12 bg-transparent relative">
       <div className="max-w-7xl mx-auto">
 
-        {/* Section Heading */}
+      
         <div className="text-center mb-16 reveal-element">
           <h2 className={`font-poppins font-bold text-3xl md:text-4xl tracking-tight mb-4 transition-colors duration-500 ${isDark ? 'text-white' : 'text-slate-900'
             }`}>Get In Touch</h2>
@@ -76,7 +76,7 @@ function Contact({ theme }) {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
-          {/* Left Column: Contact details */}
+          
           <div className="lg:col-span-5 flex flex-col justify-between reveal-element">
             <div>
               <h3 className={`font-poppins font-semibold text-2xl mb-6 transition-colors duration-500 ${isDark ? 'text-white' : 'text-slate-900'
@@ -88,7 +88,7 @@ function Contact({ theme }) {
 
               <div className="space-y-6">
 
-                {/* Email link */}
+               
                 <div className="flex items-center gap-4 group">
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300 border group-hover:bg-indigo-650 group-hover:text-white ${isDark ? 'bg-slate-900/60 text-indigo-400 border-white/5' : 'bg-indigo-50 text-indigo-600 border-indigo-100'
                     }`}>
@@ -107,7 +107,7 @@ function Contact({ theme }) {
                   </div>
                 </div>
 
-                {/* LinkedIn link */}
+         
                 <div className="flex items-center gap-4 group">
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300 border group-hover:bg-indigo-650 group-hover:text-white ${isDark ? 'bg-slate-900/60 text-indigo-400 border-white/5' : 'bg-indigo-50 text-indigo-600 border-indigo-100'
                     }`}>
@@ -128,7 +128,7 @@ function Contact({ theme }) {
                   </div>
                 </div>
 
-                {/* GitHub link */}
+           
                 <div className="flex items-center gap-4 group">
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300 border group-hover:bg-indigo-650 group-hover:text-white ${isDark ? 'bg-slate-900/60 text-indigo-400 border-white/5' : 'bg-indigo-50 text-indigo-600 border-indigo-100'
                     }`}>
@@ -149,7 +149,7 @@ function Contact({ theme }) {
                   </div>
                 </div>
 
-                {/* Phone link */}
+             
                 <div className="flex items-center gap-4 group">
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300 border group-hover:bg-indigo-650 group-hover:text-white ${isDark ? 'bg-slate-900/60 text-indigo-400 border-white/5' : 'bg-indigo-50 text-indigo-600 border-indigo-100'
                     }`}>
@@ -171,7 +171,7 @@ function Contact({ theme }) {
               </div>
             </div>
 
-            {/* Extra recruiter tip */}
+         
             <div className={`mt-12 p-5 border rounded-2xl hidden lg:block transition-all duration-500 ${isDark ? 'bg-indigo-950/20 border-indigo-500/20' : 'bg-indigo-50/50 border-indigo-100/50'
               }`}>
               <p className={`text-xs leading-relaxed transition-colors duration-500 ${isDark ? 'text-indigo-300' : 'text-indigo-800'
@@ -181,12 +181,12 @@ function Contact({ theme }) {
             </div>
           </div>
 
-          {/* Right Column: Contact form */}
+          
           <div className="lg:col-span-7 reveal-element" style={{ transitionDelay: '150ms' }}>
             <form ref={form} onSubmit={handleSubmit} className={`p-8 rounded-2xl shadow-lg border space-y-6 transition-all duration-500 ${isDark ? 'bg-slate-900/40 border-white/5 shadow-black/15' : 'bg-white border-slate-100/80'
               }`}>
 
-              {/* Input Name */}
+             
               <div className="flex flex-col">
                 <label htmlFor="name" className={`font-poppins text-xs font-semibold mb-2 uppercase tracking-wide transition-colors duration-500 ${isDark ? 'text-slate-400' : 'text-slate-500'
                   }`}>Your Name</label>
@@ -203,7 +203,7 @@ function Contact({ theme }) {
                 />
               </div>
 
-              {/* Input Email */}
+             
               <div className="flex flex-col">
                 <label htmlFor="email" className={`font-poppins text-xs font-semibold mb-2 uppercase tracking-wide transition-colors duration-500 ${isDark ? 'text-slate-400' : 'text-slate-500'
                   }`}>Your Email</label>
@@ -220,7 +220,7 @@ function Contact({ theme }) {
                 />
               </div>
 
-              {/* Input Message */}
+            
               <div className="flex flex-col">
                 <label htmlFor="message" className={`font-poppins text-xs font-semibold mb-2 uppercase tracking-wide transition-colors duration-500 ${isDark ? 'text-slate-400' : 'text-slate-500'
                   }`}>Message</label>
@@ -237,7 +237,7 @@ function Contact({ theme }) {
                 ></textarea>
               </div>
 
-              {/* Submit Button */}
+           
               <button
                 type="submit"
                 disabled={status === 'submitting'}
@@ -258,7 +258,7 @@ function Contact({ theme }) {
                 )}
               </button>
 
-              {/* Form status messages */}
+           
               {status === 'success' && (
                 <div id="form-success" className={`p-4 border text-xs sm:text-sm rounded-xl flex items-center gap-3 transition-colors duration-500 ${isDark ? 'bg-emerald-950/20 border-emerald-500/20 text-emerald-400' : 'bg-emerald-50 border border-emerald-100 text-emerald-800'
                   }`}>
