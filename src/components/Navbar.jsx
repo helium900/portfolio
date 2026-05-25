@@ -12,15 +12,15 @@ function Navbar({ theme, toggleTheme }) {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Trigger initial check
+    handleScroll(); 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden'; // Lock background scroll
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = ''; // Unlock scroll
+      document.body.style.overflow = ''; 
     }
     return () => {
       document.body.style.overflow = '';
@@ -29,10 +29,10 @@ function Navbar({ theme, toggleTheme }) {
 
   const handleLinkClick = (e, targetId) => {
     e.preventDefault();
-    setIsOpen(false); // Close mobile drawer
+    setIsOpen(false);
     const targetElement = document.querySelector(targetId);
     if (targetElement) {
-      // Offset navbar height of 80px
+     
       const offsetPosition = targetElement.getBoundingClientRect().top + window.scrollY - 80;
       window.scrollTo({
         top: offsetPosition,
@@ -43,7 +43,7 @@ function Navbar({ theme, toggleTheme }) {
 
   const isDark = theme === 'dark';
 
-  // Determine dynamic classes based on scroll state and active theme
+ 
   const baseHeaderClasses = "fixed top-0 left-0 w-full z-50 transition-all duration-300 h-20 flex items-center justify-between px-6 md:px-12";
   let headerClasses = baseHeaderClasses;
 
@@ -57,7 +57,7 @@ function Navbar({ theme, toggleTheme }) {
     headerClasses += isDark ? " text-white" : " text-slate-900";
   }
 
-  // Dynamic link classes to ensure text remains readable on changing backgrounds
+ 
   const logoClasses = `font-poppins font-bold text-xl md:text-2xl tracking-tight transition-colors ${
     isDark ? "text-white hover:text-indigo-400" : "text-slate-900 hover:text-indigo-600"
   }`;
@@ -70,19 +70,18 @@ function Navbar({ theme, toggleTheme }) {
 
   return (
     <header id="navbar" className={headerClasses}>
-      {/* Logo/Name */}
+      
       <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className={logoClasses}>
         Divyashish Negi
       </a>
 
-      {/* Desktop Nav Link Menu */}
       <nav className="hidden md:flex items-center space-x-8 font-poppins text-base font-semibold tracking-wide">
         <a href="#about" onClick={(e) => handleLinkClick(e, '#about')} className={navLinkClasses}>About</a>
         <a href="#skills" onClick={(e) => handleLinkClick(e, '#skills')} className={navLinkClasses}>Skills</a>
         <a href="#projects" onClick={(e) => handleLinkClick(e, '#projects')} className={navLinkClasses}>Projects</a>
         <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')} className={navLinkClasses}>Contact</a>
         
-        {/* Theme Toggle Button (Desktop) */}
+      
         <button 
           onClick={toggleTheme}
           className={`p-2.5 rounded-xl border transition-all duration-300 cursor-pointer ${
@@ -96,7 +95,7 @@ function Navbar({ theme, toggleTheme }) {
         </button>
       </nav>
 
-      {/* Mobile Theme Toggle & Menu Controls */}
+     
       <div className="flex items-center gap-3 md:hidden">
         <button 
           onClick={toggleTheme}
@@ -119,7 +118,7 @@ function Navbar({ theme, toggleTheme }) {
         </button>
       </div>
 
-      {/* Mobile Drawer Menu */}
+     
       <div className={`fixed inset-0 top-0 left-0 w-full h-screen backdrop-blur-lg z-45 transform transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-center items-center ${
         isOpen ? 'translate-x-0' : 'translate-x-full'
       } ${
