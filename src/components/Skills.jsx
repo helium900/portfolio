@@ -24,7 +24,7 @@ function Skills({ theme }) {
     const timer = setTimeout(() => {
       setAnimate(true);
 
-      // Animate progress bar widths of the newly active tab's items
+      
       const bars = document.querySelectorAll('.skill-progress');
       bars.forEach(bar => {
         const percent = bar.getAttribute('data-percent');
@@ -35,7 +35,7 @@ function Skills({ theme }) {
     return () => clearTimeout(timer);
   }, [activeTab]);
 
-  // Aggregate all skills if "all" is selected, otherwise filter by category
+ 
   const activeSkills = activeTab === 'all'
     ? [...skillsData.frontend, ...skillsData.backend, ...skillsData.tools]
     : skillsData[activeTab] || [];
@@ -47,7 +47,7 @@ function Skills({ theme }) {
     <section id="skills" className="py-24 px-6 md:px-12 bg-transparent transition-colors duration-500 relative">
       <div className="max-w-7xl mx-auto">
 
-        {/* Section Heading */}
+       
         <div className="text-center mb-16 reveal-element">
           <h2 className={`font-poppins font-bold text-3xl md:text-4xl tracking-tight mb-4 transition-colors duration-500 ${isDark ? 'text-white' : 'text-slate-900'
             }`}>My Skills</h2>
@@ -58,7 +58,7 @@ function Skills({ theme }) {
           </p>
         </div>
 
-        {/* Tab Filters */}
+   
         <div className="flex justify-center mb-12 reveal-element">
           <div className={`flex flex-wrap justify-center p-1.5 rounded-2xl border backdrop-blur-md gap-1 transition-all duration-500 max-w-full ${isDark ? 'bg-slate-900/40 border-white/5' : 'bg-slate-200/50 border-slate-300/40'
             }`}>
@@ -79,7 +79,7 @@ function Skills({ theme }) {
           </div>
         </div>
 
-        {/* Skills Cards Grid */}
+       
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[220px] items-center">
           {activeSkills.length > 0 ? (
             activeSkills.map((skill, index) => (
@@ -109,7 +109,7 @@ function Skills({ theme }) {
               </div>
             ))
           ) : (
-            /* Backend / Empty State */
+          
             <div className={`col-span-full max-w-lg mx-auto w-full rounded-3xl p-10 flex flex-col items-center text-center transition-all duration-500 transform ${isDark
                 ? 'bg-slate-900/45 border border-white/5 shadow-2xl shadow-black/20'
                 : 'bg-white/70 border border-slate-200/80 shadow-xl shadow-slate-100/50'
