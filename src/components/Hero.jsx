@@ -30,13 +30,13 @@ function Hero({ theme }) {
 
   return (
     <section id="overview" className="min-h-screen flex items-center justify-center pt-20 pb-16 px-6 md:px-12 bg-transparent relative overflow-hidden">
-      {/* Ambient decorative background glows */}
+     
       <div className="absolute top-1/4 left-1/10 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
       <div className="absolute bottom-1/4 right-1/10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
 
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
         
-        {/* Hero Info (Left Column) */}
+      
         <div className="lg:col-span-7 flex flex-col items-start text-left reveal-element">
           <span className={`px-3 py-1 text-xs font-semibold tracking-wider border rounded-full font-poppins mb-6 transition-all duration-500 ${
             isDark 
@@ -62,8 +62,8 @@ function Hero({ theme }) {
           </p>
           
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
-            {/* Download CV Button */}
-            <a 
+         
+        <a 
               href="/resume.pdf" 
               download="Divyashish_Negi_Resume.pdf"
               className={`px-7 py-3.5 font-poppins text-sm font-semibold rounded-xl flex items-center justify-center gap-2 transition-all duration-300 shadow-lg btn-glow ${
@@ -74,7 +74,7 @@ function Hero({ theme }) {
             >
               Download CV <Download className="w-4 h-4" />
             </a>
-            {/* Get in touch smooth scroll button */}
+         
             <a 
               href="#contact" 
               onClick={handleContactClick} 
@@ -91,11 +91,11 @@ function Hero({ theme }) {
 
         </div>
 
-        {/* Hero Illustration (Right Column) */}
+       
         <div className="lg:col-span-5 flex justify-center relative reveal-element" style={{ transitionDelay: '200ms' }}>
-          {/* Glow background behind image */}
+         
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
-          {/* Floating image */}
+        
           <div className={`relative w-full max-w-[400px] aspect-square rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 animate-float ${
             isDark ? 'shadow-indigo-950/40 border border-white/5' : 'shadow-slate-300/40 border border-slate-200'
           }`}>
