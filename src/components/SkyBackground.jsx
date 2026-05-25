@@ -1,17 +1,16 @@
 import React, { useMemo } from 'react';
 
 function SkyBackground({ theme }) {
-  // Generate random positions and animations for stars in Dark Mode.
-  // We wrap this in useMemo so that the stars do not re-position on every theme toggle or scroll update.
+  
   const stars = useMemo(() => {
     const starCount = 70;
     const tempStars = [];
     for (let i = 0; i < starCount; i++) {
       const top = Math.random() * 100;
       const left = Math.random() * 100;
-      const size = Math.random() * 2 + 1; // 1px to 3px
-      const duration = Math.random() * 4 + 2; // 2s to 6s
-      const delay = Math.random() * 5; // 0s to 5s
+      const size = Math.random() * 2 + 1; 
+      const duration = Math.random() * 4 + 2; 
+      const delay = Math.random() * 5; 
       tempStars.push({ id: i, top, left, size, duration, delay });
     }
     return tempStars;
@@ -27,19 +26,19 @@ function SkyBackground({ theme }) {
           : 'bg-gradient-to-b from-[#0ea5e9] via-[#7dd3fc] to-[#e0f2fe]'
       }`}
     >
-      {/* ================= LIGHT MODE SKY ELEMENTS ================= */}
+  
       {!isDark && (
         <div className="absolute inset-0 w-full h-full transition-opacity duration-1000 opacity-100">
-          {/* Glowing Sun */}
+         
           <div 
             className="absolute top-[20%] right-[10%] w-28 h-28 md:w-36 md:h-36 rounded-full bg-amber-400 border border-amber-300/30 animate-sun-dim select-none"
             style={{ animationDelay: '-32s' }}
           >
-            {/* Sun flare outer ring */}
+          
             <div className="absolute inset-[-10px] rounded-full bg-amber-300/20 blur-md animate-sun-dim" style={{ animationDelay: '-32s' }}></div>
           </div>
 
-          {/* Floating Cloud 1 (Moves along top-[10%] directly crossing the sun at right-[10%]) */}
+        
           <div 
             className="absolute top-[20%] left-0 w-64 h-16 opacity-75 blur-[3px] animate-cloud-1 select-none"
             style={{ animationDelay: '-32s' }}
@@ -50,7 +49,7 @@ function SkyBackground({ theme }) {
             <div className="absolute w-full h-10 bg-white rounded-full bottom-0"></div>
           </div>
 
-          {/* Floating Cloud 2 */}
+         
           <div 
             className="absolute top-[30%] left-0 w-80 h-20 opacity-70 blur-[4px] animate-cloud-2 select-none"
             style={{ animationDelay: '-15s' }}
@@ -61,7 +60,7 @@ function SkyBackground({ theme }) {
             <div className="absolute w-full h-12 bg-white rounded-full bottom-0"></div>
           </div>
 
-          {/* Floating Cloud 3 */}
+       
           <div 
             className="absolute top-[50%] left-0 w-72 h-16 opacity-75 blur-[3px] animate-cloud-3 select-none"
             style={{ animationDelay: '-65s' }}
@@ -72,7 +71,7 @@ function SkyBackground({ theme }) {
             <div className="absolute w-full h-10 bg-white rounded-full bottom-0"></div>
           </div>
 
-          {/* Floating Cloud 4 (Subtle & high altitude) */}
+         
           <div 
             className="absolute top-[70%] left-0 w-56 h-12 opacity-60 blur-[5px] animate-cloud-4 select-none" 
             style={{ animationDelay: '-100s' }}
@@ -85,10 +84,10 @@ function SkyBackground({ theme }) {
         </div>
       )}
 
-      {/* ================= DARK MODE SKY ELEMENTS ================= */}
+   
       {isDark && (
         <div className="absolute inset-0 w-full h-full transition-opacity duration-1000 opacity-100">
-          {/* Twinkling Stars */}
+          
           <div className="absolute inset-0 w-full h-full">
             {stars.map((star) => (
               <div
@@ -107,19 +106,18 @@ function SkyBackground({ theme }) {
             ))}
           </div>
 
-          {/* Glowing Moon */}
+          
           <div className="absolute top-[20%] right-[12%] w-24 h-24 md:w-32 md:h-32 rounded-full bg-slate-100 shadow-[0_0_50px_10px_rgba(224,242,254,0.25)] border border-blue-100/20">
-            {/* Subtle lunar texture crater overlays */}
+           
             <div className="absolute top-[20%] left-[25%] w-5 h-5 bg-slate-200/60 rounded-full blur-[0.5px]"></div>
             <div className="absolute top-[45%] left-[15%] w-7 h-7 bg-slate-200/60 rounded-full blur-[0.5px]"></div>
             <div className="absolute top-[60%] left-[45%] w-6 h-6 bg-slate-200/60 rounded-full blur-[0.5px]"></div>
             <div className="absolute top-[30%] left-[55%] w-4 h-4 bg-slate-200/60 rounded-full blur-[0.5px]"></div>
-            {/* Moon Glow Halo */}
+          
             <div className="absolute inset-[-15px] rounded-full bg-sky-200/5 blur-xl"></div>
           </div>
 
-          {/* Diagonal Shooting Stars */}
-          {/* Couple 1: Fires at 0s & 0.4s */}
+       
           <div 
             className="absolute bg-gradient-to-r from-transparent via-white/80 to-white w-[200px] h-[3px] rounded-full blur-[0.5px] shadow-[0_0_12px_3px_#ffffff] animate-shooting"
             style={{
@@ -137,7 +135,7 @@ function SkyBackground({ theme }) {
             }}
           />
 
-          {/* Couple 2: Fires at 5s & 5.3s */}
+         
           <div 
             className="absolute bg-gradient-to-r from-transparent via-white/80 to-white w-[160px] h-[2.5px] rounded-full blur-[0.5px] shadow-[0_0_10px_2px_#ffffff] animate-shooting"
             style={{
@@ -155,7 +153,7 @@ function SkyBackground({ theme }) {
             }}
           />
 
-          {/* Couple 3: Fires at 10s & 10.3s */}
+         
           <div 
             className="absolute bg-gradient-to-r from-transparent via-white/80 to-white w-[180px] h-[3px] rounded-full blur-[0.5px] shadow-[0_0_12px_3px_#ffffff] animate-shooting"
             style={{
