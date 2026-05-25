@@ -31,7 +31,7 @@ function App() {
   };
 
   useEffect(() => {
-    // 1. Intersection Observer for Scroll Reveals
+    
     const revealElements = document.querySelectorAll('.reveal-element');
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -40,13 +40,13 @@ function App() {
         }
       });
     }, {
-      threshold: 0.05, // Lower threshold for extremely reliable trigger on all displays
+      threshold: 0.05, 
       rootMargin: '0px 0px -20px 0px'
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // 2. Intersection Observer for Skills Progress Bar Animation
+    
     const progressBars = document.querySelectorAll('.skill-progress');
     const progressObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -54,7 +54,7 @@ function App() {
           const bar = entry.target;
           const percent = bar.getAttribute('data-percent');
           bar.style.width = percent;
-          observer.unobserve(bar); // Animate only once
+          observer.unobserve(bar); 
         }
       });
     }, {
@@ -63,7 +63,7 @@ function App() {
 
     progressBars.forEach(bar => progressObserver.observe(bar));
 
-    // Clean up observers on unmount
+   
     return () => {
       revealObserver.disconnect();
       progressObserver.disconnect();
