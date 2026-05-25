@@ -8,7 +8,7 @@ function About({ theme }) {
     <section id="about" className="py-24 px-6 md:px-12 bg-transparent relative">
       <div className="max-w-7xl mx-auto">
         
-        {/* Section Heading */}
+       
         <div className="text-center mb-16 reveal-element">
           <h2 className={`font-poppins font-bold text-3xl md:text-4xl tracking-tight mb-4 transition-colors duration-500 ${
             isDark ? 'text-white' : 'text-slate-900'
@@ -21,10 +21,10 @@ function About({ theme }) {
           </p>
         </div>
 
-        {/* Services Grid */}
+    
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          {/* Service Card 1: Web Development */}
+        
           <div className={`rounded-2xl p-8 flex flex-col items-start text-left transition-all duration-300 hover:-translate-y-2 card-glow reveal-element ${
             isDark ? 'glass-card-dark' : 'glass-card-light'
           }`}>
@@ -43,7 +43,7 @@ function About({ theme }) {
             </p>
           </div>
 
-          {/* Service Card 2: UI/UX Design */}
+        
           <div className={`rounded-2xl p-8 flex flex-col items-start text-left transition-all duration-300 hover:-translate-y-2 card-glow reveal-element ${
             isDark ? 'glass-card-dark' : 'glass-card-light'
           }`} style={{ transitionDelay: '150ms' }}>
@@ -62,7 +62,7 @@ function About({ theme }) {
             </p>
           </div>
 
-          {/* Service Card 3: Responsive Websites */}
+         
           <div className={`rounded-2xl p-8 flex flex-col items-start text-left transition-all duration-300 hover:-translate-y-2 card-glow reveal-element ${
             isDark ? 'glass-card-dark' : 'glass-card-light'
           }`} style={{ transitionDelay: '300ms' }}>
