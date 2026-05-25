@@ -32,7 +32,7 @@ const projectsList = [
     technologies: ["React"],
     description: "Portfolio website to showcase my skills.",
     githubLink: "https://github.com/helium900/Currency-Converter",
-    delay: "350ms"
+    delay: "300ms"
   }
 ];
 
