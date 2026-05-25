@@ -43,7 +43,7 @@ function Projects({ theme }) {
     <section id="projects" className="py-24 px-6 md:px-12 bg-transparent relative">
       <div className="max-w-7xl mx-auto">
 
-        {/* Section Heading */}
+       
         <div className="text-center mb-16 reveal-element">
           <h2 className={`font-poppins font-bold text-3xl md:text-4xl tracking-tight mb-4 transition-colors duration-500 ${isDark ? 'text-white' : 'text-slate-900'
             }`}>Featured Projects</h2>
@@ -54,7 +54,7 @@ function Projects({ theme }) {
           </p>
         </div>
 
-        {/* Projects Grid */}
+       
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectsList.map((project, index) => (
             <div
@@ -65,7 +65,7 @@ function Projects({ theme }) {
                 }`}
               style={{ transitionDelay: project.delay }}
             >
-              {/* Thumbnail Wrapper */}
+            
               <div className="relative overflow-hidden aspect-[3/2] bg-slate-200">
                 <img
                   src={project.image}
@@ -75,12 +75,11 @@ function Projects({ theme }) {
                 <div className="absolute inset-0 bg-slate-950/10 group-hover:bg-slate-950/20 transition-colors"></div>
               </div>
 
-              {/* Content */}
               <div className="p-6 flex flex-col justify-between flex-grow">
                 <div>
                   <h3 className={`font-poppins font-semibold text-lg mb-2 transition-colors duration-500 ${isDark ? 'text-white' : 'text-slate-900'
                     }`}>{project.title}</h3>
-                  {/* Tech stack badges */}
+                
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {project.technologies.map((tech, idx) => (
                       <span
@@ -102,7 +101,7 @@ function Projects({ theme }) {
                   </p>
                 </div>
 
-                {/* Action Button */}
+             
                 <a
                   href={project.githubLink}
                   target="_blank"
