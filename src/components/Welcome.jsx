@@ -37,31 +37,31 @@ function Welcome({ theme }) {
       id="home" 
       className="min-h-screen flex flex-col items-center justify-center pt-20 pb-16 px-6 md:px-12 bg-transparent relative overflow-hidden text-center"
     >
-      {/* Decorative background glows */}
+     
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
 
-      {/* Main Content Container (Glassmorphism and borders removed) */}
+     
       <div 
         className={`max-w-4xl mx-auto w-full flex flex-col items-center justify-center relative z-10 transition-all duration-1000 transform ${
           mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
-        {/* Heading */}
+      
         <h1 className={`font-poppins font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-none mb-6 transition-colors duration-500 ${
           isDark ? 'text-white' : 'text-slate-900'
         }`}>
           Hi, I'm <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">Divyashish Negi</span>
         </h1>
 
-        {/* Description */}
+      
         <p className={`text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mb-10 transition-colors duration-500 font-medium ${
           isDark ? 'text-slate-200' : 'text-slate-900'
         }`}>
           I am a passionate web developer. Specializing in front-end development, I build interfaces that are both beautiful and functional.
         </p>
 
-        {/* Call to Action Button */}
+   
         <div className="flex flex-col sm:flex-row items-center gap-4">
           <a 
             href="#projects" 
@@ -78,7 +78,7 @@ function Welcome({ theme }) {
         </div>
       </div>
 
-      {/* Premium Pulsing Scroll Indicator */}
+
       <div 
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 cursor-pointer z-10 select-none animate-bounce"
         onClick={handleScrollDown}
