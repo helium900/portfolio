@@ -63,9 +63,10 @@ function Hero({ theme }) {
           
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
          
-        <a 
-              href="/resume.pdf" 
-              download="Divyashish_Negi_Resume.pdf"
+    <a 
+              href="https://drive.google.com/uc?export=download&id=1LNQKsgSPQqQ5ecSCU9Zdiig7SvCrLcHL" 
+              target="_blank"
+              rel="noopener noreferrer"
               className={`px-7 py-3.5 font-poppins text-sm font-semibold rounded-xl flex items-center justify-center gap-2 transition-all duration-300 shadow-lg btn-glow ${
                 isDark 
                   ? 'bg-white text-slate-950 hover:bg-slate-100 shadow-black/10' 
