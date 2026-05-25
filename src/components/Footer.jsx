@@ -21,7 +21,6 @@ function Footer({ theme }) {
     }`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center justify-center gap-6">
         
-        {/* Logo / Name */}
         <a 
           href="#home" 
           onClick={handleHomeClick}
@@ -34,7 +33,7 @@ function Footer({ theme }) {
 
       </div>
 
-      {/* Copyright */}
+ 
       <div className={`max-w-7xl mx-auto px-6 md:px-12 mt-8 pt-8 border-t text-xs transition-colors font-medium ${
         isDark ? 'border-white/5 text-slate-500' : 'border-slate-200/50 text-slate-800'
       }`}>
