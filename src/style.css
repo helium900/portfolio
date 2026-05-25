@@ -1,0 +1,206 @@
+@import "tailwindcss";
+
+@theme {
+  --font-poppins: 'Poppins', 'Inter', sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+}
+
+/* Custom Utilities for Glassmorphism */
+@utility glass-nav {
+  background: rgba(9, 13, 22, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@utility glass-nav-light {
+  background: rgba(14, 165, 233, 0.25);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+@utility glass-card-dark {
+  background: rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+}
+
+@utility glass-card-light {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 10px 40px -10px rgba(14, 165, 233, 0.12), inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+}
+
+/* Custom Base Configurations */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  color: #0f172a;
+  background-color: transparent;
+}
+
+/* Selection Highlight */
+::selection {
+  background-color: rgba(99, 102, 241, 0.35);
+  color: #ffffff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.25);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.7);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Scroll Reveal Classes */
+.reveal-element {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-element.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover glow effect for premium buttons */
+.btn-glow:hover {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+}
+
+.card-glow:hover {
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+/* Theme Transition */
+body {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Sky Background Animations */
+
+/* Floating Clouds Animations (Left to Right) */
+@keyframes float-cloud-left-to-right {
+  0% {
+    transform: translateX(-35vw);
+  }
+  100% {
+    transform: translateX(115vw);
+  }
+}
+
+/* Sun Dimming Animation (Synced with Cloud 1 at top-[10%] crossing the sun at 76%-80% of travel timeline) */
+@keyframes sun-dim {
+  0%, 68%, 88%, 100% {
+    opacity: 1;
+    filter: brightness(1);
+    box-shadow: 0 0 80px 25px rgba(245, 158, 11, 0.55);
+  }
+  76%, 80% {
+    opacity: 0.35;
+    filter: brightness(0.6);
+    box-shadow: 0 0 25px 5px rgba(245, 158, 11, 0.15);
+  }
+}
+
+/* Star Twinkling Animation */
+@keyframes star-twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Shooting Star Animation */
+@keyframes shooting-star {
+  0% {
+    transform: translate(0, 0) rotate(-40deg) scale(0);
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(-40deg) scale(1);
+  }
+  18% {
+    transform: translate(-1000px, 840px) rotate(-40deg) scale(1);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-1000px, 840px) rotate(-40deg) scale(0);
+    opacity: 0;
+  }
+}
+
+.animate-cloud-1 {
+  animation: float-cloud-left-to-right 80s linear infinite;
+}
+
+.animate-cloud-2 {
+  animation: float-cloud-left-to-right 110s linear infinite;
+}
+
+.animate-cloud-3 {
+  animation: float-cloud-left-to-right 90s linear infinite;
+}
+
+.animate-cloud-4 {
+  animation: float-cloud-left-to-right 130s linear infinite;
+}
+
+.animate-sun-dim {
+  animation: sun-dim 80s linear infinite;
+}
+
+.animate-twinkle {
+  animation: star-twinkle var(--twinkle-duration, 3s) ease-in-out infinite;
+}
+
+.animate-shooting {
+  animation: shooting-star 15s linear infinite;
+  animation-fill-mode: backwards;
+  opacity: 0;
+  transform: rotate(-40deg) scale(0);
+}
+
