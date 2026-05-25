@@ -17,7 +17,7 @@
   }
 }
 
-/* Custom Utilities for Glassmorphism */
+
 @utility glass-nav {
   background: rgba(9, 13, 22, 0.4);
   backdrop-filter: blur(12px);
@@ -48,7 +48,7 @@
   box-shadow: 0 10px 40px -10px rgba(14, 165, 233, 0.12), inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
 }
 
-/* Custom Base Configurations */
+
 html {
   scroll-behavior: smooth;
 }
@@ -60,13 +60,12 @@ body {
   background-color: transparent;
 }
 
-/* Selection Highlight */
 ::selection {
   background-color: rgba(99, 102, 241, 0.35);
   color: #ffffff;
 }
 
-/* Custom Scrollbar */
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -88,7 +87,7 @@ body {
   background-clip: padding-box;
 }
 
-/* Scroll Reveal Classes */
+
 .reveal-element {
   opacity: 0;
   transform: translateY(24px);
@@ -100,7 +99,7 @@ body {
   transform: translateY(0);
 }
 
-/* Hover glow effect for premium buttons */
+
 .btn-glow:hover {
   box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
 }
@@ -110,14 +109,10 @@ body {
   border-color: rgba(99, 102, 241, 0.2);
 }
 
-/* Theme Transition */
 body {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
-
-/* Sky Background Animations */
-
-/* Floating Clouds Animations (Left to Right) */
+ 
 @keyframes float-cloud-left-to-right {
   0% {
     transform: translateX(-35vw);
@@ -127,7 +122,7 @@ body {
   }
 }
 
-/* Sun Dimming Animation (Synced with Cloud 1 at top-[10%] crossing the sun at 76%-80% of travel timeline) */
+
 @keyframes sun-dim {
   0%, 68%, 88%, 100% {
     opacity: 1;
@@ -141,7 +136,6 @@ body {
   }
 }
 
-/* Star Twinkling Animation */
 @keyframes star-twinkle {
   0%, 100% {
     opacity: 0.2;
@@ -153,7 +147,7 @@ body {
   }
 }
 
-/* Shooting Star Animation */
+
 @keyframes shooting-star {
   0% {
     transform: translate(0, 0) rotate(-40deg) scale(0);
